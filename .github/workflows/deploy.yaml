@@ -1,4 +1,8 @@
 name: Deploy Project
+
+# env:
+#   BUN_VERSION: ${{ vars.BUN_VERSION }}
+
 on:
   push:
   workflow_dispatch:
@@ -7,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Bun version
+        run: echo "Bun version: ${{ vars.BUN_VERSION }}"
+      - name: Print Api key 
+        run: echo "Bun version: ${{ secrets.API_KEY }}"
       - name: Get Code
         uses: actions/checkout@v4
       - name: Install Bun
