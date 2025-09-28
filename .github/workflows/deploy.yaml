@@ -20,10 +20,10 @@ jobs:
         run: echo "Api key:${{ secrets.API_KEY }}"
       - name: Get Code
         uses: actions/checkout@v4
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.2.18
+      # - name: Install Bun
+      #   uses: oven-sh/setup-bun@v2
+      #   with:
+      #     bun-version: 1.2.18
       - name: Caching
         uses: actions/cache@v4
         with:
