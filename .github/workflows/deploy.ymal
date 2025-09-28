@@ -11,6 +11,8 @@ jobs:
   build:
     environment: prod
     runs-on: ubuntu-latest
+    container:
+      image: oven/bun:1
     steps:
       - name: Print Bun version
         run: echo "Bun version:${{ vars.BUN_VERSION }}"
