@@ -37,8 +37,8 @@ jobs:
         with:
           name: dist-folder
           path: dist/
-      - name: Force failure
-        run: exit 1
+      # - name: Force failure
+      #   run: exit 1
 
   deploy:
     if: github.ref == 'refs/heads/master'
