@@ -1,0 +1,14 @@
+services:
+  web:
+    image: tigertony2536/react-demo1
+    container_name: react
+    ports:
+      - 3000:3000
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - caddy
+
+networks:
+  caddy:
+    external: true
