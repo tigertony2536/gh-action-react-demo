@@ -1,14 +1,17 @@
 name: Install deps and caching
 description: Install deps and caching
+inputs:
+  bun-version:
+    description: bun version
+    required: false
+    default: 1.2.18
 runs:
   using: composite
   steps:
-    - name: Clone repo
-      uses: actions/checkout@v5
     - name: Install Bun
       uses: oven-sh/setup-bun@v2
       with:
-        bun-version: 1.2.8
+        bun-version: ${{ inputs.BUN_VERSION }}
     - name: Cache dependencies
       uses: actions/cache@v4
       with:
