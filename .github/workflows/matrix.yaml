@@ -8,6 +8,12 @@ jobs:
       matrix:
         bun_version: ["1.2.0", "1.2.18", "1.2.16"]
         browser: ["firefox", "chrome", "safari"]
+        exclude:
+          - bun_version: "1.2.18"
+            browser: "safari"
+        include:
+          - bun_version: "1.2.18"
+            browser: "edge"
     steps:
       - name: Print Bun version and test Browser
         run: echo "${{ matrix.bun_version }} - ${{ matrix.browser }}"
